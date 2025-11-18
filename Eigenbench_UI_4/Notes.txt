@@ -1,0 +1,7 @@
+if ModuleNotFoundError: No module named '_tkinter':
+brew install python-tk@3.13
+
+
+dataset and user can be selected in the arguments
+
+chmod +x './UIJudge.py'
