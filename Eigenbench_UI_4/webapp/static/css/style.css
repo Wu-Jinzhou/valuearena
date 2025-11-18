@@ -1,0 +1,682 @@
+/* EigenBench Web App Styles - Redesigned UI */
+
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   Login Page
+   ============================================================================ */
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.tab-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-btn:hover {
+  color: var(--primary-hover);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group small {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ============================================================================
+   Messages
+   ============================================================================ */
+
+.error-message {
+  color: var(--error-color);
+  font-size: 14px;
+  padding: 8px 12px;
+  background: #fee2e2;
+  border-radius: 6px;
+  display: none;
+}
+
+.error-message:not(:empty) {
+  display: block;
+}
+
+.success-message {
+  color: var(--success-color);
+  font-size: 14px;
+  padding: 8px 12px;
+  background: #d1fae5;
+  border-radius: 6px;
+  display: none;
+}
+
+.success-message:not(:empty) {
+  display: block;
+}
+
+/* ============================================================================
+   Judge Page
+   ============================================================================ */
+
+.judge-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 24px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-left h1 {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.user-email {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  background: var(--bg-color);
+  border-radius: 12px;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.progress-bar-container {
+  height: 4px;
+  background: var(--border-color);
+  position: sticky;
+  top: 73px;
+  z-index: 99;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.main-container {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+/* ============================================================================
+   Loading & Completion States
+   ============================================================================ */
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-state p {
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
+.completion-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.completion-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  max-width: 500px;
+}
+
+.completion-card h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.completion-card p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.completion-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ============================================================================
+   Judge Interface - New Design
+   ============================================================================ */
+
+.judge-interface {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.progress-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.progress-info {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Scenario Card */
+.scenario-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.scenario-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+}
+
+/* Assistants Container */
+.assistants-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 968px) {
+  .assistants-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.assistant-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.assistant-card.selected {
+  border-color: var(--success-color);
+}
+
+.assistant-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.assistant-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.assistant-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-secondary);
+}
+
+.assistant-response {
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Checkmark Overlay Animation */
+.checkmark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(16, 185, 129, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.assistant-card.show-checkmark .checkmark-overlay {
+  opacity: 1;
+}
+
+/* Voting Card */
+.voting-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.criterion-display {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.criterion-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.criterion-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.vote-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 968px) {
+  .vote-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .vote-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vote-option {
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 110px;
+}
+
+.vote-option:hover {
+  border-color: var(--primary-color);
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.vote-option:active {
+  transform: translateY(0);
+}
+
+.vote-arrow {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.vote-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.vote-sublabel {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 180px;
+}
+
+.status-message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  display: none;
+}
+
+.status-message.show {
+  display: block;
+}
+
+.status-message.success {
+  background: #d1fae5;
+  color: var(--success-color);
+}
+
+.status-message.error {
+  background: #fee2e2;
+  color: var(--error-color);
+}
+
+/* ============================================================================
+   Complete Page
+   ============================================================================ */
+
+.complete-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.completion-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.completion-card.large {
+  padding: 60px 40px;
+}
+
+.completion-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.completion-card h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+.completion-message {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.completion-description {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+.completion-stats {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+}
+
+.small-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.small-text code {
+  background: var(--bg-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* ============================================================================
+   Responsive
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .header-right .btn {
+    flex: 1;
+  }
+
+  .main-container {
+    padding: 20px 16px;
+  }
+}
