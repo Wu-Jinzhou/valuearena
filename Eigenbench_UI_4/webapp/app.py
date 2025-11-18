@@ -27,7 +27,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 DEFAULT_CONSTITUTION = "Constitutions/Kindness.txt"
 DEFAULT_RESPONSES = "Datasets/evaluations.json"
 DEFAULT_DATASET_PATH = "Datasets/evaluations.json"
-MAX_SCENARIOS = int(os.getenv("MAX_SCENARIOS", "20"))
+MAX_SCENARIOS = int(os.getenv("MAX_SCENARIOS", "50"))
 
 
 # ============================================================================
